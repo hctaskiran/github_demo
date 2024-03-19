@@ -17,6 +17,9 @@
 		A30CE82F2BA70B470067BA91 /* GitUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30CE82E2BA70B470067BA91 /* GitUserModel.swift */; };
 		A30CE8312BA70B5F0067BA91 /* GithubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30CE8302BA70B5F0067BA91 /* GithubError.swift */; };
 		A30CE8342BA70CE00067BA91 /* GitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30CE8332BA70CE00067BA91 /* GitService.swift */; };
+		A3735F282BAA305700A48DB4 /* UserProfilePhotoSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3735F272BAA305700A48DB4 /* UserProfilePhotoSubview.swift */; };
+		A3735F2A2BAA30E400A48DB4 /* UserNameLocationFollowersSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3735F292BAA30E400A48DB4 /* UserNameLocationFollowersSubview.swift */; };
+		A3735F2C2BAA313500A48DB4 /* UserBioSocialSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3735F2B2BAA313500A48DB4 /* UserBioSocialSubview.swift */; };
 		A39426802BA717EA000800B2 /* GitFollowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A394267F2BA717EA000800B2 /* GitFollowerModel.swift */; };
 		A39426832BA7196D000800B2 /* FollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39426822BA7196D000800B2 /* FollowersView.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,9 @@
 		A30CE82E2BA70B470067BA91 /* GitUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserModel.swift; sourceTree = "<group>"; };
 		A30CE8302BA70B5F0067BA91 /* GithubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubError.swift; sourceTree = "<group>"; };
 		A30CE8332BA70CE00067BA91 /* GitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitService.swift; sourceTree = "<group>"; };
+		A3735F272BAA305700A48DB4 /* UserProfilePhotoSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoSubview.swift; sourceTree = "<group>"; };
+		A3735F292BAA30E400A48DB4 /* UserNameLocationFollowersSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameLocationFollowersSubview.swift; sourceTree = "<group>"; };
+		A3735F2B2BAA313500A48DB4 /* UserBioSocialSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBioSocialSubview.swift; sourceTree = "<group>"; };
 		A394267F2BA717EA000800B2 /* GitFollowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFollowerModel.swift; sourceTree = "<group>"; };
 		A39426822BA7196D000800B2 /* FollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +150,7 @@
 		A30CE82A2BA70B0F0067BA91 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3735F262BAA304600A48DB4 /* Subviews */,
 				A30CE8022BA6FA9E0067BA91 /* ContentView.swift */,
 				A39426822BA7196D000800B2 /* FollowersView.swift */,
 			);
@@ -180,6 +187,16 @@
 				A30CE8332BA70CE00067BA91 /* GitService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A3735F262BAA304600A48DB4 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				A3735F272BAA305700A48DB4 /* UserProfilePhotoSubview.swift */,
+				A3735F292BAA30E400A48DB4 /* UserNameLocationFollowersSubview.swift */,
+				A3735F2B2BAA313500A48DB4 /* UserBioSocialSubview.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,13 +329,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3735F2C2BAA313500A48DB4 /* UserBioSocialSubview.swift in Sources */,
 				A30CE82F2BA70B470067BA91 /* GitUserModel.swift in Sources */,
 				A30CE8342BA70CE00067BA91 /* GitService.swift in Sources */,
+				A3735F2A2BAA30E400A48DB4 /* UserNameLocationFollowersSubview.swift in Sources */,
 				A30CE8312BA70B5F0067BA91 /* GithubError.swift in Sources */,
 				A39426832BA7196D000800B2 /* FollowersView.swift in Sources */,
 				A30CE8032BA6FA9E0067BA91 /* ContentView.swift in Sources */,
 				A39426802BA717EA000800B2 /* GitFollowerModel.swift in Sources */,
 				A30CE8012BA6FA9E0067BA91 /* github_demoApp.swift in Sources */,
+				A3735F282BAA305700A48DB4 /* UserProfilePhotoSubview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
