@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var user: GitUser?
+    private let service = IGitService()
     
     private func getUserData() {
         Task {
@@ -25,12 +27,6 @@ struct ContentView: View {
         }
     }
     
-    @State private var user: GitUser?
-    @State private var followers: GitFollowers?
-    @State private var showFollowers = false
-    @State var username: String = ""
-    let service = IGitService()
-    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -40,10 +36,8 @@ struct ContentView: View {
                     
                 UserBioSocial()
                     
-                    Spacer()                    
+                Spacer()
                 }
-            }.onAppear {
-                getUserData()
             }
         }
     }

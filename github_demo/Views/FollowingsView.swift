@@ -1,20 +1,20 @@
 //
-//  FollowersView.swift
+//  FollowingsView.swift
 //  github_demo
 //
-//  Created by Haktan Can Taşkıran on 17.03.2024.
+//  Created by Haktan Can Taşkıran on 20.03.2024.
 //
 
 import SwiftUI
 
-struct FollowersView: View {
-    @State private var followers: [GitFollowers] = []
+struct FollowingsView: View {
+    @State private var followings: [GitFollowings] = []
     private let service = IGitService()
     
-    private func getFollowersData() {
+    private func getFollowingsData() {
         Task {
             do {
-                followers = try await service.getFollowers()
+                followings = try await service.getFollowings()
             } catch GitError.invalidData {
                 print("Data not found")
             } catch GitError.invalidResponse {
@@ -29,11 +29,11 @@ struct FollowersView: View {
     
     var body: some View {
         VStack{
-            if followers.isEmpty {
+            if followings.isEmpty {
                 Text("Loading...")
             } else {
                 List {
-                    ForEach(followers) { item in
+                    ForEach(followings) { item in
                         HStack(spacing: 10) {
                             AsyncImage(url: URL(string: item.avatarURL)) { image in
                                 image
@@ -54,13 +54,11 @@ struct FollowersView: View {
                 }
             }
         }.onAppear{
-            getFollowersData()
+            getFollowingsData()
         }
     }
 }
 
-
-
 #Preview {
-    FollowersView()
+    FollowingsView()
 }

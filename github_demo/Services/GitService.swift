@@ -9,6 +9,7 @@ import Foundation
 protocol GitService {
     func getUser() async throws -> GitUser
     func getFollowers() async throws -> [GitFollowers]
+    func getFollowings() async throws -> [GitFollowings]
 }
 
 class IGitService: GitService {
@@ -50,6 +51,27 @@ class IGitService: GitService {
         do {
             let decoder = JSONDecoder()
             return try decoder.decode([GitFollowers].self, from: data)
+        } catch {
+            throw GitError.invalidData
+        }
+    }
+    
+    func getFollowings() async throws -> [GitFollowings] {
+        let endpoint = "https://api.github.com/users/hctaskiran/following"
+        
+        guard let url = URL(string: endpoint) else {
+            throw GitError.invalidURL
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw GitError.invalidResponse
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode([GitFollowings].self, from: data)
         } catch {
             throw GitError.invalidData
         }

@@ -29,7 +29,9 @@ struct UserNameLocationFollowers: View {
                     Text("Followers: \(user?.followers ?? 0)").foregroundStyle(.black)
                 }
                 
-                Text("Following: \(user?.following ?? 0)")
+                NavigationLink(destination: FollowingsView()) {
+                    Text("Following: \(user?.following ?? 0)").foregroundStyle(.black)
+                }
             }
         }
     }
