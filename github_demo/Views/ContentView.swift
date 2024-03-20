@@ -10,8 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var user: GitUser?
     private let service = IGitService()
+    @State private var isBottomSheetShown = false
+    @State private var repos: [GitReposModel] = []
+    @State private var currentRepo: GitReposModel?
     
-    private func getUserData() {
+    private func getUserData() async {
         Task {
             do {
                 user = try await service.getUser()
@@ -30,20 +33,32 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                ProfilePicture()
+                
+                ProfilePicture(user: user)
                     
-                UserNameLocationFollowers()
+                UserNameLocationFollowers(user: user)
                     
-                UserBioSocial()
+                UserBioSocial(user: user)
+                
+                ReposView()
                     
                 Spacer()
-                }
+                
+            }
+        }.onAppear {
+            Task {
+                await getUserData()
             }
         }
     }
+}
 
 
 
 #Preview {
     ContentView()
 }
+
+
+
+

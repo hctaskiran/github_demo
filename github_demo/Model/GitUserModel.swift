@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GitUser: Codable {
+struct GitUser: Decodable {
     let login: String
     let avatarURL, url: String
     let name, bio: String
@@ -26,6 +26,4 @@ struct GitUser: Codable {
         case twitterUsername = "twitter_username"
         case blog
     }
-    
-     
 }

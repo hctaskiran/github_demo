@@ -10,7 +10,8 @@ import SwiftUI
 
 
 struct UserNameLocationFollowers: View {
-    @State private var user: GitUser?
+    let user: GitUser?
+    
     var body: some View {
         VStack(spacing: 10) {
             
